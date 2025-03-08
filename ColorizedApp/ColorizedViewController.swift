@@ -101,7 +101,7 @@ final class ColorizedViewController: UIViewController {
         slider.minimumValue = 0
         slider.maximumValue = 1
         slider.value = Float.random(in: 0...1)
-        slider.maximumTrackTintColor = .white
+        slider.maximumTrackTintColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
         
         switch tumbleColor {
         case .systemRed:
@@ -133,10 +133,10 @@ final class ColorizedViewController: UIViewController {
         
         label.forEach {
             $0.textColor = .white
-            $0.font = .systemFont(ofSize: 18, weight: .medium)
+            $0.font = .systemFont(ofSize: 14, weight: .medium)
         }
         
     }
-
+    
 }
 
