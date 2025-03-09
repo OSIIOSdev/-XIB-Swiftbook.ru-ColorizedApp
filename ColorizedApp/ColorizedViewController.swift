@@ -43,17 +43,20 @@ final class ColorizedViewController: UIViewController {
     
     @IBAction func colorSliderChanged(_ sender: UISlider) {
         
-        if sender == redColorSlider {
+        switch sender {
+            
+        case redColorSlider:
             redValueLabel.text = String(format: "%.2f", sender.value)
             getViewColor(for: sender)
-        } else if sender == greenColorSlider {
+        case greenColorSlider:
             greenValueLabel.text = String(format: "%.2f", sender.value)
             getViewColor(for: sender)
-        } else {
+        default:
             blueValueLabel.text = String(format: "%.2f", sender.value)
             getViewColor(for: sender)
             
         }
+        
     }
     
     
