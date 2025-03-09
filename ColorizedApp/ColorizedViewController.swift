@@ -89,9 +89,9 @@ final class ColorizedViewController: UIViewController {
     
     private func getViewColor(for slider: UISlider) {
         
-        colorizedView.backgroundColor = UIColor(red: CGFloat(Float(redValueLabel.text ?? "0") ?? 0),
-                                                green: CGFloat(Float(greenValueLabel.text ?? "0") ?? 0),
-                                                blue: CGFloat(Float(blueValueLabel.text ?? "0") ?? 0),
+        colorizedView.backgroundColor = UIColor(red: CGFloat(Float(redColorSlider.value)),
+                                                green: CGFloat(Float(greenColorSlider.value)),
+                                                blue: CGFloat(Float(blueColorSlider.value)),
                                                 alpha: 1)
         
     }
@@ -104,6 +104,7 @@ final class ColorizedViewController: UIViewController {
         slider.maximumTrackTintColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
         
         switch tumbleColor {
+            
         case .systemRed:
             slider.thumbTintColor = .systemRed
             slider.minimumTrackTintColor = #colorLiteral(red: 0.9098039269, green: 0.4784313738, blue: 0.6431372762, alpha: 1)
@@ -113,6 +114,7 @@ final class ColorizedViewController: UIViewController {
         default:
             slider.thumbTintColor = .systemBlue
             slider.minimumTrackTintColor = #colorLiteral(red: 0.5369998813, green: 0.5776420236, blue: 0.9568473697, alpha: 1)
+            
         }
         
     }
@@ -127,13 +129,16 @@ final class ColorizedViewController: UIViewController {
                          redColorLabel,
                          greenColorLabel,
                          blueColorLabel)
+        
     }
     
     private func getLabelSettings(for label: UILabel...) {
         
         label.forEach {
+            
             $0.textColor = .white
             $0.font = .systemFont(ofSize: 14, weight: .medium)
+            
         }
         
     }
